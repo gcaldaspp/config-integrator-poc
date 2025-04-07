@@ -4,8 +4,8 @@ import com.picpay.edi.EntityType.MOVEMENTS
 import com.picpay.edi.EntityType.TRANSACTIONS
 import com.picpay.edi.EntityType.WITHDRAWALS
 
-class BinanceApplicableRule : AbstractionApplicableRule() {
-    override val name = "binance"
+class NSellersApplicableRule : AbstractionApplicableRule() {
+    override val name = "nsellers"
     override val files = listOf(TRANSACTIONS, MOVEMENTS, WITHDRAWALS)
     private var internalInformations: List<InternalInformation> = emptyList()
 

@@ -15,7 +15,7 @@ fun main() {
                 "cancellationId": true
             },
             "applicable": {
-                "binance": [
+                "nsellers": [
                     {
                         "acquirerTerminalId": "0001",
                         "document": "011",
@@ -46,7 +46,7 @@ fun main() {
             TerminalIdValidation()
         ),
         applicable = listOf(
-            BinanceApplicableRule()
+            NSellersApplicableRule()
         )
     )
 
