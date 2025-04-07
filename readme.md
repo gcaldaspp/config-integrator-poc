@@ -6,8 +6,9 @@ Nesse projeto temos a implementação do motor de aplicação de regra do edi.
 
 No projeto, as regras foram categorizadas em dois tipos com funções distintas:
 
-1- Regras Validáveis: Verificam a conformidade de um registro, determinando se ele deve ser incluído ou excluído no arquivo final. Atuam como filtro, garantindo que apenas dados que atendam aos requisitos pré-estabelecidos sejam processados.
-2- Regras Aplicáveis: Modificam diretamente os valores de um registro. Alteram o conteúdo final dos dados processados, ajustando informações antes da geração do arquivo de saída.
+1 - Regras Validáveis: Verificam a conformidade de um registro, determinando se ele deve ser incluído ou excluído no arquivo final. Atuam como filtro, garantindo que apenas dados que atendam aos requisitos pré-estabelecidos sejam processados.
+
+2 - Regras Aplicáveis: Modificam diretamente os valores de um registro. Alteram o conteúdo final dos dados processados, ajustando informações antes da geração do arquivo de saída.
 
 ## Exemplo de json
 
