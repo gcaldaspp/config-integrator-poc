@@ -12,12 +12,14 @@ Este projeto é uma aplicação baseada em Kotlin que processa e valida transaç
 
 ### `src/main/kotlin/Domain.kt`
 Define os modelos de domínio e enums:
+
 - `Transactions`, `Movements`, `Withdrawals` e `Pix` representam diferentes entidades financeiras.
 - `ValidationField` é uma classe auxiliar para fins de validação.
 - `EntityType` é um enum para categorizar as entidades.
 
 ### `src/main/kotlin/Main.kt`
 O ponto de entrada da aplicação:
+
 - Lê a configuração JSON para validações e regras aplicáveis.
 - Inicializa o `ProcessorEngine` com validações e regras aplicáveis.
 - Processa uma lista de `Transactions`, `Movements` e `Withdrawals` utilizando o motor de regras.
@@ -29,6 +31,7 @@ Implementa o `ProcessorEngine`:
 
 ### `src/main/kotlin/Validations.kt`
 Define as regras de validação:
+
 - `FepasCodeValidation`: Valida que o campo `fepasCode` não está vazio.
 - `CancellationValidation`: Valida o campo `cancellationId` com base no `movementCode`.
 - `TerminalIdValidation`: Valida que o campo `terminalId` não está vazio.
