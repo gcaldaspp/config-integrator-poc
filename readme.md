@@ -80,7 +80,8 @@ A aplicação processa uma configuração JSON como a seguinte:
         "sellerCNPJ": "0001",
         "sellerCNPJMatriz": "123456"
       }
-    ]
+    ],
+     "sellerId": true
   }
 }
 ```
