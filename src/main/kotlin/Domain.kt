@@ -4,7 +4,9 @@ data class Transactions(
     val brandTrxId: String,
     val document: String,
     val fepasCode: String,
-    val sellerName: String? = null
+    val sellerName: String? = null,
+    val sellerId: String? = null,
+    val preservedSellerId: String? = null
 )
 
 data class Movements(
@@ -14,7 +16,9 @@ data class Movements(
     val movementCode: Int,
     val cancellationId: String? = null,
     val terminalId: String = "",
-    val sellerName: String? = null
+    val sellerName: String? = null,
+    val sellerId: String? = null,
+    val preservedSellerId: String? = null
 )
 
 data class Withdrawals(
@@ -24,7 +28,9 @@ data class Withdrawals(
     val movementCode: Int,
     val cancellationId: String? = null,
     val terminalId: String = "",
-    val sellerName: String? = null
+    val sellerName: String? = null,
+    val sellerId: String? = null,
+    val preservedSellerId: String? = null
 )
 
 data class Pix(

@@ -6,7 +6,7 @@ abstract class AbstractValidationRule: ValidationRule {
     override fun setParams(params: Boolean) { enabled = params }
 }
 
-abstract class AbstractionApplicableRule: ApplicableRule {
+abstract class AbstractApplicableRule: ApplicableRule {
     override fun apply(record: Any): Any =
         when(record) {
             is Transactions -> whenTransaction(record)

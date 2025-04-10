@@ -10,8 +10,8 @@ fun main() {
     val json = """
         {
             "validations": {
-                "fepasCode": true, 
-                "terminalId": true, 
+                "fepasCode": true,
+                "terminalId": true,
                 "cancellationId": true
             },
             "applicable": {
@@ -30,7 +30,8 @@ fun main() {
                         "sellerCNPJ": "0001",
                         "sellerCNPJMatriz": ""
                     }
-                ]
+                ],
+                "sellerId": true
             }
         }
     """.trimIndent()
@@ -46,15 +47,34 @@ fun main() {
             TerminalIdValidation()
         ),
         applicable = listOf(
-            NSellersApplicableRule()
+            NSellersApplicableRule(),
+            SellerApplicableRule()
         )
     )
 
     val transactions = listOf(
-        Transactions("1", "011","1"),
-        Transactions("2", "012","1"),
-        Transactions("3", "013",""),
-        Transactions("4", "011",""),
+        Transactions(
+            brandTrxId = "1",
+            document = "011",
+            fepasCode = "1"
+        ),
+        Transactions(
+            brandTrxId = "2",
+            document = "012",
+            fepasCode = "1"
+        ),
+        Transactions(
+            brandTrxId = "3",
+            document = "013",
+            fepasCode = "",
+            preservedSellerId = "seller_id_1"
+        ),
+        Transactions(
+            brandTrxId = "4",
+            document = "011",
+            fepasCode = "",
+            preservedSellerId = "seller_id_2"
+        ),
     )
 
     println("== Transactions == ")

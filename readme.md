@@ -2,6 +2,13 @@
 
 Este projeto é uma aplicação baseada em Kotlin que processa e valida transações financeiras, movimentos e saques utilizando um motor de regras. A aplicação está estruturada em múltiplos componentes, incluindo modelos de domínio, regras de validação e um motor de processamento.
 
+## Conceitos importantes
+
+No projeto, as regras foram categorizadas em dois tipos com funções distintas:
+
+1. Regras Validáveis: Verificam a conformidade de um registro, determinando se ele deve ser incluído ou excluído no arquivo final. Atuam como filtro, garantindo que apenas dados que atendam aos requisitos pré-estabelecidos sejam processados.
+2. Regras Aplicáveis: Modificam diretamente os valores de um registro. Alteram o conteúdo final dos dados processados, ajustando informações antes da geração do arquivo de saída.
+
 ## Funcionalidades
 
 - **Domain**: Representa entidades como `Transactions` (Transações), `Movements` (Movimentos), `Withdrawals` (Saques) e `Pix`.
@@ -81,3 +88,17 @@ A aplicação processa uma configuração JSON como a seguinte:
 ## Exemplo de Saída
 
 A aplicação gera os resultados das validações e regras aplicáveis para cada tipo de entidade (`Transactions`, `Movements`, `Withdrawals`).
+
+# Regras no integrator
+
+## Validações
+
+1. Enriquecimento por solução de captura
+2. Registros duplicados com o legado
+3. Transações de TEF sem authorização
+4. SellerId do Uber
+
+## Transformações
+
+1. Enriquecimento do sellerId do Uber
+2. De/Para dos n-sellers (WhirlPool, AliPay, ClickBus)

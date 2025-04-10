@@ -1,12 +1,11 @@
 package com.picpay.edi
 
-import com.picpay.edi.EntityType.MOVEMENTS
-import com.picpay.edi.EntityType.TRANSACTIONS
-import com.picpay.edi.EntityType.WITHDRAWALS
+import com.picpay.edi.ShortEntityList.FILES_WITHOUT_PIX
+import com.picpay.edi.ShortEntityList.ONLY_TRANSACTIONS
 
-class NSellersApplicableRule : AbstractionApplicableRule() {
+class NSellersApplicableRule : AbstractApplicableRule() {
     override val name = "nsellers"
-    override val files = listOf(TRANSACTIONS, MOVEMENTS, WITHDRAWALS)
+    override val files = FILES_WITHOUT_PIX
     private var internalInformations: List<InternalInformation> = emptyList()
 
     override fun setParams(params: Any) {
@@ -58,4 +57,22 @@ class NSellersApplicableRule : AbstractionApplicableRule() {
         val sellerName: String?,
         val sellerNameMatriz: String?
     )
+}
+
+class SellerApplicableRule : AbstractApplicableRule(){
+    override val name = "sellerId"
+    override val files: List<EntityType> = ONLY_TRANSACTIONS
+    private var enabled = false
+    override fun setParams(params: Any) {
+        enabled = params as Boolean
+    }
+
+    override fun whenTransaction(transactions: Transactions): Transactions =
+        if (enabled) {
+            with(transactions) {
+                copy(
+                    sellerId = preservedSellerId
+                )
+            }
+        } else transactions
 }
