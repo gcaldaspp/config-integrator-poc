@@ -25,3 +25,12 @@ class TerminalIdValidation : AbstractValidationRule() {
         if (isEnabled()) field.terminalId.isNotBlank()
         else true
 }
+
+class CaptureSolutionValidation : AbstractValidationRule() {
+    override val name = "captureSolution"
+    override val files: List<EntityType> = FILES_WITHOUT_PIX
+    override fun valid(field: ValidationField): Boolean {
+        println("Aplicada a validação de solução de captura")
+        return true
+    }
+}

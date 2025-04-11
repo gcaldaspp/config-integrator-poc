@@ -12,7 +12,8 @@ fun main() {
             "validations": {
                 "fepasCode": true,
                 "terminalId": true,
-                "cancellationId": true
+                "cancellationId": true,
+                "captureSolution": true
             },
             "applicable": {
                 "nsellers": [
@@ -44,7 +45,8 @@ fun main() {
         validations = listOf(
             FepasCodeValidation(),
             CancellationValidation(),
-            TerminalIdValidation()
+            TerminalIdValidation(),
+            CaptureSolutionValidation()
         ),
         applicable = listOf(
             NSellersApplicableRule(),
