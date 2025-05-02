@@ -7,6 +7,13 @@ import com.picpay.edi.EntityType.TRANSACTIONS
 import com.picpay.edi.EntityType.WITHDRAWALS
 
 fun main() {
+    /*
+    * sellerId 1
+    * 1- Faz a consulta da página 1
+    * 2- Realiza os filtros nessa lista de transações
+    * 3- Gera o mapeamento para inserir no arquivo
+    * 4- Iterar sobre a lista aplicando as regras aplicaveis
+    * */
     val json = """
         {
             "validations": {
@@ -22,7 +29,9 @@ fun main() {
                         "document": "011",
                         "sellerName": "Binance 1",
                         "sellerCNPJ": "0001",
-                        "sellerCNPJMatriz": ""
+                        "sellerCNPJMatriz": "",
+                        "sellerId": 123,
+                        "valid": true
                     },
                     {
                         "acquirerTerminalId": "0001",

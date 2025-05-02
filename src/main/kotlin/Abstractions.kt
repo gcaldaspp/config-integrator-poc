@@ -2,7 +2,7 @@ package com.picpay.edi
 
 abstract class AbstractValidationRule: ValidationRule {
     private var enabled: Boolean = false
-    protected fun isEnabled() = enabled
+    override fun isEnabled() = enabled
     override fun setParams(params: Boolean) { enabled = params }
 }
 

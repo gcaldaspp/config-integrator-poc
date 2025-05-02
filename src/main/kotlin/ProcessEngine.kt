@@ -14,7 +14,8 @@ class ProcessorEngine(
     ): List<Pair<String, Boolean>> =
         validations
             .mapNotNull { validationsMap[it.key]?.apply { setParams(it.value) } }
-            .filter { it.isValidFile(file) }.map { it.name to it.valid(ruleField) }
+            .filter { it.isValidFile(file) }
+            .map { it.name to it.valid(ruleField) }
 
     fun applyApplicable(file: EntityType, applicable: Map<String, *>, row: Any): Any {
         var modifiedRow = row

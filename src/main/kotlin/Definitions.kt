@@ -9,6 +9,7 @@ interface Rule<T> {
 
 // Tudo aquilo que pode impedir um registro de sair no extrato. Exemplo: Ausência de fepasCode
 interface ValidationRule: Rule<Boolean> {
+    fun isEnabled(): Boolean
     fun valid(field: ValidationField): Boolean
 }
 

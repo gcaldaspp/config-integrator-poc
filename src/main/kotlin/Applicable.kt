@@ -59,6 +59,12 @@ class NSellersApplicableRule : AbstractApplicableRule() {
     )
 }
 
+/*
+* sellerId asdfg
+* sellerId do banco de matriz e filial = 1
+* substituir o sellerId que veio do banco de matriz e filial pelo sellerId enriquecido no preservedSellerId
+* */
+
 class SellerApplicableRule : AbstractApplicableRule(){
     override val name = "sellerId"
     override val files: List<EntityType> = ONLY_TRANSACTIONS

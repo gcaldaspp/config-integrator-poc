@@ -7,7 +7,9 @@ class FepasCodeValidation: AbstractValidationRule() {
     override val name = "fepasCode"
     override val files: List<EntityType> = FILES_WITHOUT_PIX
     override fun valid(field: ValidationField): Boolean =
-        if (isEnabled()) field.fepasCode.isNotBlank() else true
+        if (isEnabled())
+            field.fepasCode.isNotBlank()
+        else true
 }
 
 class CancellationValidation : AbstractValidationRule() {
